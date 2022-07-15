@@ -12,37 +12,49 @@ margin_right = 152.0
 margin_bottom = 312.0
 
 [node name="Dice2" parent="." instance=ExtResource( 2 )]
-margin_left = 360.0
+margin_left = 296.0
 margin_top = 264.0
-margin_right = 408.0
+margin_right = 344.0
 margin_bottom = 312.0
 
 [node name="Dice3" parent="." instance=ExtResource( 2 )]
-margin_left = 616.0
+margin_left = 488.0
 margin_top = 264.0
-margin_right = 664.0
+margin_right = 536.0
 margin_bottom = 312.0
 
 [node name="Dice4" parent="." instance=ExtResource( 2 )]
+margin_left = 680.0
+margin_top = 264.0
+margin_right = 728.0
+margin_bottom = 312.0
+
+[node name="Dice5" parent="." instance=ExtResource( 2 )]
 margin_left = 872.0
 margin_top = 264.0
 margin_right = 920.0
 margin_bottom = 312.0
 
 [node name="MathButtons1" parent="." instance=ExtResource( 1 )]
-margin_left = 224.0
+margin_left = 192.0
 margin_top = 232.0
-margin_right = 288.0
+margin_right = 256.0
 margin_bottom = 360.0
 
 [node name="MathButtons2" parent="." instance=ExtResource( 1 )]
-margin_left = 480.0
+margin_left = 384.0
 margin_top = 232.0
-margin_right = 544.0
+margin_right = 448.0
 margin_bottom = 360.0
 
 [node name="MathButtons3" parent="." instance=ExtResource( 1 )]
-margin_left = 736.0
+margin_left = 576.0
 margin_top = 232.0
-margin_right = 800.0
+margin_right = 640.0
+margin_bottom = 360.0
+
+[node name="MathButtons4" parent="." instance=ExtResource( 1 )]
+margin_left = 768.0
+margin_top = 232.0
+margin_right = 832.0
 margin_bottom = 360.0
