@@ -13,18 +13,23 @@ var target_score = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var tmp_node = false
-	randomize()
-	for x in range(1, DICE_RENDERED+1):
-		tmp_node = get_node("Dice" + str(x))
-		tmp_node.set_value((randi() % DICE_SIDES) + 1)
-	set_target_score()
+	init_new_game()
 	#test_player_score()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+# Initialize a new game
+func init_new_game():
+	var tmp_node = false
+	randomize()
+	for x in range(1, DICE_RENDERED+1):
+		tmp_node = get_node("Dice" + str(x))
+		tmp_node.set_value((randi() % DICE_SIDES) + 1)
+	set_target_score()
 
 
 # Return the player score, reading the user-selected operators.
@@ -35,7 +40,7 @@ func get_player_score():
 		tmp_node = get_node("MathButtons" + str(x))
 		operators.append(tmp_node.operator)
 	print("get_player_score")
-	var result = compute_points(operators[0], operators[1], operators[2], operators[3])
+	var result = _compute_points(operators[0], operators[1], operators[2], operators[3])
 	return result
 
 
@@ -46,14 +51,14 @@ func set_target_score():
 	for x in range(1, OPERATOR_RENDERED+1):
 		operators.append(MATH_OPERATORS[randi() % MATH_OPERATORS.size()])
 	print("set_target_score")
-	target_score = compute_points(operators[0], operators[1], operators[2], operators[3])
+	target_score = _compute_points(operators[0], operators[1], operators[2], operators[3])
 
 
 # Compose the math expression and eval its result.
 # Dice values are static and always get from scene.
 # Operators are passed as string args, so we can use this
 # for computing both the game problem and the user solution.
-func compute_points(op1, op2, op3, op4):
+func _compute_points(op1, op2, op3, op4):
 	for x in [op1, op2, op3, op4]:
 		if not MATH_OPERATORS.has(x):
 			return 0
@@ -72,6 +77,11 @@ func compute_points(op1, op2, op3, op4):
 	var result = expression.execute()
 	print(math_problem + ' = ' + str(result))
 	return result
+
+
+# When HUD request a new game.
+func _on_signal_start_new_game():
+	init_new_game()
 
 
 # [DEBUG] sum all dice and echo the total in console
