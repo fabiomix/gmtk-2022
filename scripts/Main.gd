@@ -43,8 +43,8 @@ func get_player_score():
 		tmp_node = get_node("MathButtons" + str(x))
 		operators.append(tmp_node.operator)
 	print("get_player_score")
-	var result = _compute_points(operators[0], operators[1], operators[2], operators[3])
-	return result
+	player_score = _compute_points(operators[0], operators[1], operators[2], operators[3])
+	return player_score
 
 
 # Given the dice values, generate the problem by randomizing the operators.
@@ -90,8 +90,12 @@ func _on_signal_start_new_game():
 
 # When HUD request to check the score.
 func _on_signal_check_player_score():
-	var result = get_player_score()
-	$HUD.set_player_score(result)
+	get_player_score()
+	$HUD.set_player_score(player_score)
+	if player_score == target_score:
+		$HUD.show_success()
+	else:
+		$HUD.show_fail()
 
 
 # [DEBUG] sum all dice and echo the total in console

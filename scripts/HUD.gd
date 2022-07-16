@@ -22,6 +22,16 @@ func set_player_score(new_value):
 	$LabelPlayerScoreValue.text = str(new_value)
 
 
+# Update HUD on solution found.
+func show_success():
+	pass
+
+
+# Update HUD on wrong solution.
+func show_fail():
+	pass
+
+
 # Notify main scene to initialize new game.
 func _on_ButtonNewGame_pressed():
 	emit_signal("start_new_game")
