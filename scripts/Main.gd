@@ -29,6 +29,7 @@ func init_new_game():
 	for x in range(1, DICE_RENDERED+1):
 		tmp_node = get_node("Dice" + str(x))
 		tmp_node.set_value((randi() % DICE_SIDES) + 1)
+	$HUD.init_new_game()
 	set_target_score()
 
 
@@ -52,6 +53,7 @@ func set_target_score():
 		operators.append(MATH_OPERATORS[randi() % MATH_OPERATORS.size()])
 	print("set_target_score")
 	target_score = _compute_points(operators[0], operators[1], operators[2], operators[3])
+	$HUD.set_target_score(target_score)
 
 
 # Compose the math expression and eval its result.
@@ -82,6 +84,12 @@ func _compute_points(op1, op2, op3, op4):
 # When HUD request a new game.
 func _on_signal_start_new_game():
 	init_new_game()
+
+
+# When HUD request to check the score.
+func _on_signal_check_player_score():
+	var result = get_player_score()
+	$HUD.set_player_score(result)
 
 
 # [DEBUG] sum all dice and echo the total in console

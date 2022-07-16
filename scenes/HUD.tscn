@@ -21,4 +21,45 @@ margin_right = 192.0
 margin_bottom = 560.0
 text = "New game"
 
+[node name="LabelTargetScore" type="Label" parent="."]
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 192.0
+margin_bottom = 96.0
+text = "Target score"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="LabelPlayerScore" type="Label" parent="."]
+margin_left = 832.0
+margin_top = 64.0
+margin_right = 960.0
+margin_bottom = 96.0
+text = "Your score"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="LabelTargetScoreValue" type="Label" parent="."]
+margin_left = 192.0
+margin_top = 64.0
+margin_right = 320.0
+margin_bottom = 96.0
+text = "-"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="LabelPlayerScoreValue" type="Label" parent="."]
+margin_left = 704.0
+margin_top = 64.0
+margin_right = 832.0
+margin_bottom = 96.0
+text = "-"
+align = 1
+valign = 1
+uppercase = true
+
+[connection signal="pressed" from="ButtonCheck" to="." method="_on_ButtonCheck_pressed"]
 [connection signal="pressed" from="ButtonNewGame" to="." method="_on_ButtonNewGame_pressed"]

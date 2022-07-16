@@ -64,4 +64,5 @@ margin_bottom = 360.0
 
 [node name="HUD" parent="." instance=ExtResource( 4 )]
 
+[connection signal="check_player_score" from="HUD" to="." method="_on_signal_check_player_score"]
 [connection signal="start_new_game" from="HUD" to="." method="_on_signal_start_new_game"]
