@@ -14,7 +14,6 @@ var target_score = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	init_new_game()
-	#test_player_score()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -29,6 +28,9 @@ func init_new_game():
 	for x in range(1, DICE_RENDERED+1):
 		tmp_node = get_node("Dice" + str(x))
 		tmp_node.set_value((randi() % DICE_SIDES) + 1)
+	for x in range(1, OPERATOR_RENDERED+1):
+		tmp_node = get_node("MathButtons" + str(x))
+		tmp_node.reset_button()
 	$HUD.init_new_game()
 	set_target_score()
 
