@@ -1,7 +1,7 @@
 extends Control
 
 
-# Declare member variables here. Examples:
+# Declare member variables here.
 var value = false
 
 
