@@ -10,6 +10,7 @@ signal check_player_score
 func init_new_game():
 	set_target_score('-')
 	set_player_score('-')
+	$SoundNewGame.play()
 
 
 # Proxy for Main scene to set target score.
@@ -24,7 +25,7 @@ func set_player_score(new_value):
 
 # Update HUD on solution found.
 func show_success():
-	pass
+	$SoundSuccess.play()
 
 
 # Update HUD on wrong solution.
