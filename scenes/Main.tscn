@@ -13,60 +13,60 @@ script = ExtResource( 3 )
 
 [node name="Dice1" parent="." instance=ExtResource( 2 )]
 margin_left = 80.0
-margin_top = 248.0
+margin_top = 208.0
 margin_right = 176.0
-margin_bottom = 344.0
+margin_bottom = 304.0
 
 [node name="Dice2" parent="." instance=ExtResource( 2 )]
 margin_left = 272.0
-margin_top = 248.0
+margin_top = 208.0
 margin_right = 368.0
-margin_bottom = 344.0
+margin_bottom = 304.0
 
 [node name="Dice3" parent="." instance=ExtResource( 2 )]
 margin_left = 464.0
-margin_top = 248.0
+margin_top = 208.0
 margin_right = 560.0
-margin_bottom = 344.0
+margin_bottom = 304.0
 
 [node name="Dice4" parent="." instance=ExtResource( 2 )]
 margin_left = 656.0
-margin_top = 248.0
+margin_top = 208.0
 margin_right = 752.0
-margin_bottom = 344.0
+margin_bottom = 304.0
 
 [node name="Dice5" parent="." instance=ExtResource( 2 )]
 margin_left = 848.0
-margin_top = 248.0
+margin_top = 208.0
 margin_right = 944.0
-margin_bottom = 344.0
+margin_bottom = 304.0
 
 [node name="MathButtons1" parent="." instance=ExtResource( 1 )]
 margin_left = 192.0
-margin_top = 232.0
+margin_top = 192.0
 margin_right = 256.0
-margin_bottom = 360.0
+margin_bottom = 320.0
 theme = ExtResource( 5 )
 
 [node name="MathButtons2" parent="." instance=ExtResource( 1 )]
 margin_left = 384.0
-margin_top = 232.0
+margin_top = 192.0
 margin_right = 448.0
-margin_bottom = 360.0
+margin_bottom = 320.0
 theme = ExtResource( 5 )
 
 [node name="MathButtons3" parent="." instance=ExtResource( 1 )]
 margin_left = 576.0
-margin_top = 232.0
+margin_top = 192.0
 margin_right = 640.0
-margin_bottom = 360.0
+margin_bottom = 320.0
 theme = ExtResource( 5 )
 
 [node name="MathButtons4" parent="." instance=ExtResource( 1 )]
 margin_left = 768.0
-margin_top = 232.0
+margin_top = 192.0
 margin_right = 832.0
-margin_bottom = 360.0
+margin_bottom = 320.0
 theme = ExtResource( 5 )
 
 [connection signal="check_player_score" from="HUD" to="." method="_on_signal_check_player_score"]
