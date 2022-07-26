@@ -98,6 +98,22 @@ func _on_signal_check_player_score():
 		$HUD.show_fail()
 
 
+# Keyboard shortcuts
+func _input(event):
+	if event.is_action_pressed("new_game"):
+		init_new_game()
+	if event.is_action_pressed("check_score"):
+		_on_signal_check_player_score()
+	if event.is_action_pressed("loop_mathbuttons1"):
+		$MathButtons1.loop_button()
+	if event.is_action_pressed("loop_mathbuttons2"):
+		$MathButtons2.loop_button()
+	if event.is_action_pressed("loop_mathbuttons3"):
+		$MathButtons3.loop_button()
+	if event.is_action_pressed("loop_mathbuttons4"):
+		$MathButtons4.loop_button()
+
+
 # [DEBUG] sum all dice and echo the total in console
 func test_player_score():
 	var tmp_node = false
