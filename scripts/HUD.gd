@@ -20,6 +20,8 @@ func set_target_score(new_value):
 
 # Proxy for Main scene to set player score.
 func set_player_score(new_value):
+	if new_value == null:
+		new_value = '-'
 	$LabelPlayerScoreValue.text = str(new_value)
 
 

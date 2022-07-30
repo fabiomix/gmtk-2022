@@ -65,7 +65,7 @@ func set_target_score():
 func _compute_points(op1, op2, op3, op4):
 	for x in [op1, op2, op3, op4]:
 		if not MATH_OPERATORS.has(x):
-			return 0
+			return null
 	var expression = Expression.new()
 	var math_problem = ''
 	math_problem += str($Dice1.value)
